@@ -425,17 +425,26 @@ Create a timesheet report.
 + photo: `R0lGODlhEAAOALMAAOazToeHh0tLS/7LZv/0jvb29t/f3//Ub//ge8WSLf/rhf/3kdbW1mxsbP//mf///yH5BAAAAAAAL` (array) - serialized stream (base64) representing the image.
 
 ## Review Base (object)
-+ rate: 5 (number, required) - evalutation. The range is between 1 to 5
-+ title:  `A special coffee` (string, required) - title
-+ comments:  `This coffe is good...` (string) - description of the review
 + userId: 1 (number) - id of the publisher
 + shopId: 1 (number) - id of the shop
++ title:  `A special coffee` (string, required) - title
++ comments:  `This coffe is good...` (string) - description of the review
 + photo: 1 (array[string]) - list of image
 + date:  `2015-11-10T18:24:18` (number) - creation date
++ rate: 5 (number, required) - evalutation. The range is between 1 to 5
 
 ## Review Create (Review Base)
 
 ## Review Update (Review Base)
+
+## Rate Base (object)
++ reviewId: 1 (number) - id of the review
++ productId: 1 (number) - id of the product
++ rate: 5 (number, required) - evalutation. The range is between 1 to 5
+
+## Rate Create (Rate Base)
+
+## Rate Update (Rate Base)
 
 ## User Base (object)
 + email: `user@mail.it` (string, required) - email of the user. Email must be unique
