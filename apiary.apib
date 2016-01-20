@@ -393,6 +393,122 @@ Create a timesheet report.
     Returned when a generic error occours.
 
     + Body
+    
+#######################
+# Group S04 - Rates
+#######################
+
+This group takes care of registering the rates about a single reviews
+
+## Rates collections [/rates{?page}{?reviewId}{?productId}]
+
++ Attributes (Collection)
+  + rateslist (array[Rate]) - array of rate
+
+### List Rates [GET]
+The list of rates filtering by any paramters
+
++ Parameters
+    + page: 1 (optional, number) - The page of reviews to return
+    + reviewId: 1 (optional, number) - ID of the review
+    + productId: 1 (optional, number) - ID of the product
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Link: </rates?reviewId=1>; rel="next"
+
+    + Attributes (Rates collections)
+
++ Response 500
+    Returned when a generic error occours.
+
+    + Body
+    
+### Create Rate[POST]
+Create a timesheet report.
+
++ Request (application/json)
+    + Attributes (Rate Create)
+
++ Response 201
+
+    + Headers
+
+            Location: /rates/1
+
++ Response 400
+    Returned when input does not pass validation.
+
+    + Body
+
++ Response 500
+    Returned when a generic error occours.
+
+    + Body
+
+## Rate [/rates/{id}]
+
++ Parameters
+    + id: 1 (required, number) - ID of the review
+
++ Attributes (Review Base)
+    + id: 1 (required, number) - ID of the review
+
+### Read Rate [GET]
+
++ Response 200 (application/json)
+
+    + Attributes (Rate)
+      + id: 1 (required, number) - ID of the rate
+
++ Response 404
+    Returned when the required resource cannot be found.
+
+    + Body
+
++ Response 500
+    Returned when a generic error occours.
+
+    + Body
+    
+### Update Rate [PUT]
+
++ Request (application/json)
+
+    + Attributes (Rate Update)
+
++ Response 200
+
++ Response 400
+    Returned when input does not pass validation.
+
+    + Body
+
++ Response 404
+    Returned when the required resource cannot be found.
+
+    + Body
+
++ Response 500
+    Returned when a generic error occours.
+
+    + Body
+
+### Delete Rate [DELETE]
+
++ Response 204
+
++ Response 404
+    Returned when the required resource cannot be found.
+
+    + Body
+
++ Response 500
+    Returned when a generic error occours.
+
+    + Body
 
     
 # Data Structures
