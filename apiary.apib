@@ -311,7 +311,7 @@ The list of reviews filtering by a user, or date, or nothing..
     + Body
     
 ### Create Review[POST]
-Create a timesheet report.
+Create a new review.
 
 + Request (application/json)
     + Attributes (Review Create)
@@ -427,7 +427,7 @@ The list of rates filtering by any paramters
     + Body
     
 ### Create Rate[POST]
-Create a timesheet report.
+Create rate about specific review.
 
 + Request (application/json)
     + Attributes (Rate Create)
@@ -510,6 +510,123 @@ Create a timesheet report.
 
     + Body
 
+#######################
+# Group S05 - Reports
+#######################
+
+A user can send any comment by this service
+
+## Reports collections [/reports{?page}{?reviewId}{?productId}{?userId}{?date}]
+
++ Attributes (Collection)
+  + rateslist (array[Report]) - array of reports
+
+### List Reports [GET]
+The list of reports filtering by any paramter, as specific users or date..
+
++ Parameters
+    + page: 1 (optional, number) - The page of reviews to return
+    + reviewId: 1 (optional, number) - ID of the review
+    + productId: 1 (optional, number) - ID of the product
+    + userId: 1 (optional, number) - ID of the user
+    + date: `20160112`(optional, number) - the review create in a date
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Link: </rates?userId=1>; rel="next"
+
+    + Attributes (Reports collections)
+
++ Response 500
+    Returned when a generic error occours.
+
+    + Body
+    
+### Create Report[POST]
+Create a report about any review or product or.. nothing!
+
++ Request (application/json)
+    + Attributes (Report Create)
+
++ Response 201
+
+    + Headers
+
+            Location: /reports/1
+
++ Response 400
+    Returned when input does not pass validation.
+
+    + Body
+
++ Response 500
+    Returned when a generic error occours.
+
+    + Body
+
+## Report [/reports/{id}]
+
++ Parameters
+    + id: 1 (required, number) - ID of the rate
+
++ Attributes (Report Base)
+    + id: 1 (required, number) - ID of the rate
+
+### Read Report [GET]
+
++ Response 200 (application/json)
+
+    + Attributes (Report)
+      + id: 1 (required, number) - ID of the rate
+
++ Response 404
+    Returned when the required resource cannot be found.
+
+    + Body
+
++ Response 500
+    Returned when a generic error occours.
+
+    + Body
+    
+### Update Report [PUT]
+
++ Request (application/json)
+
+    + Attributes (Report Update)
+
++ Response 200
+
++ Response 400
+    Returned when input does not pass validation.
+
+    + Body
+
++ Response 404
+    Returned when the required resource cannot be found.
+
+    + Body
+
++ Response 500
+    Returned when a generic error occours.
+
+    + Body
+
+### Delete Report [DELETE]
+
++ Response 204
+
++ Response 404
+    Returned when the required resource cannot be found.
+
+    + Body
+
++ Response 500
+    Returned when a generic error occours.
+
+    + Body
     
 # Data Structures
 
@@ -575,4 +692,15 @@ Create a timesheet report.
 ## User Create (User Base)
 
 ## User Update (User Base)
+
+## Report Base (object)
++ userId: 1 (number) - id of the publisher
++ shopId: 1 (number) - id of the shop
++ reviewId: 1 (number) - id of the review
++ comments:  `This review is bad...` (string) - description of the review
++ date:  `2015-11-10T18:24:18` (number) - creation date
+
+## Report Create (Report Base)
+
+## Report Update (Report Base)
 
