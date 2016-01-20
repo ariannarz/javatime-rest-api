@@ -404,11 +404,12 @@ Create a timesheet report.
 + userId: 1 (number) - id of the publisher
 + name: `Bar Mario` (string, required) - name of the shop
 + city: `Seregno` (string, required) - city of the shop
-+ code: `20500` (number, required) - postal code
++ postal_code: `20500` (number, required) - postal code
++ nation: `Italy` (string) - nation
 + address: `via Torino` (string, required) - shop's address
-+ address_nro: `240` (string, required) - shop's number address
-+ prefixNumber: `+39` (string, optional) - prefix of telephone number
-+ telephoneNumber: `0123-1234567` (string, optional) - telephone number
++ address_number: `240` (string, required) - shop's number address
++ prefix_number: `+39` (string, optional) - prefix of telephone number
++ telephone_number: `0123-1234567` (string, optional) - telephone number
 + site: `www.bar.com` (string) - the site url
 + shopType (enum) - Identifies the type of the shop
     + BAR
@@ -443,7 +444,7 @@ Create a timesheet report.
 + city: `Milano` (string) - city of the user
 + active: `Y` (boolean) - the user confirmed his email address
 + permission: `ADMIN` (enum) - the user's grant
-    + ADMINty
+    + ADMIN
     + STANDARD
 
 ## User Create (User Base)
