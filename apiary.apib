@@ -437,16 +437,14 @@ Create a timesheet report.
 ## Review Update (Review Base)
 
 ## User Base (object)
-+ username: `user1` (string, required) - displayed name. username is the id of the user.
-+ password: `p4ssw0rd` (string, required) - password
 + email: `user@mail.it` (string, required) - email of the user. Email must be unique
-+ firstName:  `name` (string, required) - name of the user
-+ lastname: `lastname` (string, required) - surname of the user
++ password: `p4ssw0rd` (string, required) - password
++ username: `user1` (string, required) - displayed name. username is the id of the user.
 + city: `Milano` (string) - city of the user
-+ code: `20500` (number) - postal code
-+ address: `via Milano, 1` - user's address
-+ prefixNumber: `+39` (string, optional) - prefix of telephone number
-+ telephoneNumber: `0123-1234567` (string, optional) - telephone number
++ active: `Y` (boolean) - the user confirmed his email address
++ permission: `ADMIN` (enum) - the user's grant
+    + ADMINty
+    + STANDARD
 
 ## User Create (User Base)
 
