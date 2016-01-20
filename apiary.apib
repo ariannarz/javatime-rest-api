@@ -451,10 +451,10 @@ Create a timesheet report.
 ## Rate [/rates/{id}]
 
 + Parameters
-    + id: 1 (required, number) - ID of the review
+    + id: 1 (required, number) - ID of the rate
 
 + Attributes (Rate Base)
-    + id: 1 (required, number) - ID of the review
+    + id: 1 (required, number) - ID of the rate
 
 ### Read Rate [GET]
 
@@ -554,7 +554,7 @@ Create a timesheet report.
 
 ## Rate Base (object)
 + reviewId: 1 (number) - id of the review
-+ productId: 1 (number) - id of the product
++ productId: 1 (number, required) - id of the product
 + rate: 5 (number, required) - evalutation. The range is between 1 to 5
 
 ## Rate Create (Rate Base)
